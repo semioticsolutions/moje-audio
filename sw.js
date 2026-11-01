@@ -1,5 +1,5 @@
-const CACHE='moje-audio-v3';
-const ASSETS=['./index.html','./style.css?v=3','./app.js?v=3','./manifest.webmanifest','./icon.svg'];
+const CACHE='moje-audio-v4';
+const ASSETS=['./index.html','./style.css?v=4','./app.js?v=4','./manifest.webmanifest','./icon.svg'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)));self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil((async()=>{for(const key of await caches.keys())if(key!==CACHE)await caches.delete(key);await self.clients.claim()})())});
 self.addEventListener('fetch',event=>{
